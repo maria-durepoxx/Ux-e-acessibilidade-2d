@@ -1,13 +1,12 @@
-/* Configurações Globais e Variáveis */
+/* Palette Azul Moderna */
 :root {
-    --bg-color: #f3e8f8;
-    --card-bg: #ffffff;
-    --primary-color: #4a148c;
-    --secondary-color: #8e24aa;
-    --accent-color: #d81b60;
-    --text-color: #333333;
-    --link-color: #0288d1;
-    --font-base-size: 100%; /* Permite alteração via JS */
+    --primary-blue: #0f4c81;       /* Azul Escuro Elegante */
+    --accent-blue: #0077b6;        /* Azul Vibrante */
+    --light-blue: #e0f2fe;         /* Azul Claro Suave */
+    --bg-blue: #f0f7ff;            /* Fundo Azul Marfim */
+    --text-dark: #1e293b;          /* Texto Escuro de Alto Contraste */
+    --card-bg: #ffffff;            /* Fundo dos Cartões */
+    --font-size-base: 100%;
 }
 
 * {
@@ -17,184 +16,247 @@
 }
 
 html {
-    font-size: var(--font-base-size);
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
-    font-family: "Nunito", "Nunito Sans", sans-serif;
-    color: var(--text-color);
+    background-color: var(--bg-blue);
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-dark);
     line-height: 1.6;
-    padding-bottom: 40px;
 }
 
-/* Barra de Acessibilidade Fixa */
+/* Layout Container */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Barra de Acessibilidade */
 .accessibility-bar {
     position: sticky;
     top: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-blue);
     color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
+    padding: 12px 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
-.accessibility-bar button {
-    background-color: white;
-    color: var(--primary-color);
-    border: none;
-    font-weight: bold;
-    padding: 5px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.accessibility-bar button:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05);
-}
-
-/* Structural Layout */
-.header-container {
-    text-align: center;
-    padding: 40px 20px 20px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.main-container {
-    max-width: 900px;
+.accessibility-container {
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accessibility-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.font-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.font-controls button {
+    background: white;
+    color: var(--primary-blue);
+    border: none;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.font-controls button:hover {
+    background-color: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+/* Cabeçalho Hero */
+.hero-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.hero-header h1 {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.hero-header .subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
 }
 
 /* Cartões (Cards) */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
 .card {
     background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 25px rgba(15, 76, 129, 0.08);
+    border: 1px solid rgba(0, 119, 182, 0.1);
 }
 
-/* Tipografia */
-h1 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-    font-family: "Paytone One", sans-serif;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: var(--secondary-color);
+.card h2 {
+    font-family: 'Paytone One', sans-serif;
+    color: var(--primary-blue);
     font-size: 1.8rem;
-    font-family: "Paytone One", sans-serif;
     margin-bottom: 20px;
-    border-bottom: 3px solid var(--bg-color);
-    padding-bottom: 8px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-h3 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+}
+
+/* Caixa da Questão Motriz */
+.question-box {
+    background-color: var(--light-blue);
+    border-left: 6px solid var(--accent-blue);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.question-box .badge {
+    background-color: var(--accent-blue);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
     margin-bottom: 8px;
 }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-/* Destaque da Questão Motriz */
-.highlight-box {
-    background-color: #fce4ec;
-    border-left: 5px solid var(--accent-color);
-    padding: 15px 20px;
-    border-radius: 4px;
-    margin-top: 15px;
-}
-
-.highlight-box p {
+.question-box p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-blue);
     margin: 0;
-    color: #880e4f;
 }
 
 /* Grid do Glossário */
 .glossary-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-}
-
-.glossary-item {
-    background-color: #fafafa;
-    border: 1px solid #eeeeee;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* Botões e Links estilizados */
-.btn-link {
-    display: inline-block;
-    color: var(--link-color);
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 5px;
-}
-
-.btn-link:hover {
-    text-decoration: underline;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-bottom: 20px;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* Vídeo Responsivo */
-.video-label {
-    font-weight: bold;
     margin-top: 15px;
 }
 
-.video-wrapper {
-    width: 100%;
+.glossary-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.glossary-card h3 {
+    color: var(--accent-blue);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.glossary-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.link-button {
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    align-self: flex-start;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+/* Botões Principais */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    margin: 15px 0 30px 0;
+    box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* Vídeo */
+.video-section {
+    border-top: 1px solid var(--light-blue);
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.video-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.video-container {
     max-width: 640px;
-    border-radius: 8px;
+    margin-top: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
 }
 
 video {
     width: 100%;
-    height: auto;
     display: block;
 }
 
-/* Responsividade para telas menores */
+/* Ajustes para Dispositivos Móveis */
 @media (max-width: 600px) {
-    h1 { font-size: 1.7rem; }
-    h2 { font-size: 1.4rem; }
+    .hero-header h1 { font-size: 1.8rem; }
+    .hero-header .subtitle { font-size: 1rem; }
     .card { padding: 20px; }
 }
