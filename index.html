@@ -7,75 +7,92 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Paytone+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Paytone+One&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="accessibility-bar">
-        <span>Acessibilidade:</span>
-        <button id="btn-increase" title="Aumentar Fonte">A+</button>
-        <button id="btn-decrease" title="Diminuir Fonte">A-</button>
-    </div>
-
-    <header class="header-container">
-        <h1>Visão em Construção: A Lente da Inovação Científica</h1>
+    <header class="accessibility-bar">
+        <div class="accessibility-container">
+            <span class="accessibility-title">♿ Acessibilidade:</span>
+            <div class="font-controls">
+                <button id="btn-increase" aria-label="Aumentar tamanho do texto" title="Aumentar fonte">A+</button>
+                <button id="btn-reset" aria-label="Restaurar tamanho do texto" title="Tamanho normal">A</button>
+                <button id="btn-decrease" aria-label="Diminuir tamanho do texto" title="Diminuir fonte">A-</button>
+            </div>
+        </div>
     </header>
 
-    <main class="main-container">
-        <section class="card intro-card">
-            <p><strong>Minha biografia:</strong> Sou um site construído para apresentação dos trabalhos desenvolvidos no decorrer da Jornada 2 no grupo de estudos Formadores em Ação do Projeto Integrador: Inteligência Artificial e Tecnologias.</p>
-            <p>Esse Projeto Integrador é desenvolvido no Ensino Médio, com estudantes da 2ª série e faz parte do Itinerário Formativo de Aprofundamento das áreas de Matemática e suas tecnologias e Ciências da Natureza e suas Tecnologias.</p>
-            
-            <div class="highlight-box">
-                <p><strong>Questão Motriz:</strong> Como a ciência, a tecnologia e as ferramentas de IA contribuem para a melhoria da visão das pessoas?</p>
-            </div>
-        </section>
+    <section class="hero-header">
+        <div class="container">
+            <h1>Visão em Construção</h1>
+            <p class="subtitle">A Lente da Inovação Científica</p>
+        </div>
+    </section>
 
-        <section class="card">
-            <h2>Glossário de Termos da Física e Robótica</h2>
+    <main class="main-container container">
+        
+        <article class="card hero-card">
+            <h2>Sobre o Projeto</h2>
+            <p><strong>Minha biografia:</strong> Sou um site construído para apresentação dos trabalhos desenvolvidos no decorrer da Jornada 2 no grupo de estudos Formadores em Ação do Projeto Integrador: Inteligência Artificial e Tecnologias.</p>
+            <p>Esse Projeto Integrador é desenvolvido no Ensino Médio, com estudantes da 2ª série e faz parte do Itinerário Formativo de Aprofundamento das áreas de Matemática e suas Tecnologias e Ciências da Natureza e suas Tecnologias.</p>
+            
+            <div class="question-box">
+                <span class="badge">Questão Motriz</span>
+                <p>Como a ciência, a tecnologia e as ferramentas de IA contribuem para a melhoria da visão das pessoas?</p>
+            </div>
+        </article>
+
+        <article class="card">
+            <h2>Glossário de Termos: Física e Robótica</h2>
 
             <div class="glossary-grid">
-                <article class="glossary-item">
+                <div class="glossary-card">
                     <h3>Óptica</h3>
                     <p>Ramo da Física que estuda a luz e os fenômenos associados a ela, incluindo sua propagação, refração, reflexão e a interação com a visão humana (como a formação de imagens no olho). No contexto do material, estuda-se como a luz e as cores são percebidas pelo sistema visual.</p>
-                </article>
+                </div>
 
-                <article class="glossary-item">
+                <div class="glossary-card">
                     <h3>Daltonismo (ou Discromatopsia)</h3>
-                    <p>Uma limitação sensorial genética na qual o olho humano possui ausência ou anomalia em células da retina chamadas cones (responsáveis por captar as cores vermelha, verde ou azul). Fisicamente, trata-se de uma variação anatómica estável que limita ou altera a capacidade de filtrar e distinguir determinados comprimentos de onda da luz.</p>
-                    <a href="https://brasilescola.uol.com.br/biologia/daltonismo.htm" target="_blank" class="btn-link">Fonte / Saiba Mais</a>
-                </article>
+                    <p>Uma limitação sensorial genética na qual o olho humano possui ausência ou anomalia em células da retina chamadas cones (responsáveis por captar as cores vermelha, verde ou azul). Fisicamente, trata-se de uma variação anatômica estável que limita ou altera a capacidade de filtrar e distinguir determinados comprimentos de onda da luz.</p>
+                    <a href="https://brasilescola.uol.com.br/biologia/daltonismo.htm" target="_blank" rel="noopener noreferrer" class="link-button">Saiba mais na fonte ↗</a>
+                </div>
 
-                <article class="glossary-item">
+                <div class="glossary-card">
                     <h3>Arduino (Arduino Uno R3)</h3>
-                    <p>Uma placa de desenvolvimento de hardware programável que funciona como um microcontrolador. Ele é capaz de processar informações recebidas por sensores e controlar diferentes componentes elétricos e eletrônicos, servindo como a "base" para protótipos funcionais.</p>
-                    <a href="https://sketchfab.com/3d-models/arduino-compativel-uno-smd-4088843133774a798e714cd05000ec66" target="_blank" class="btn-link">Fonte / Modelo 3D</a>
-                </article>
+                    <p>Uma placa de desenvolvimento de hardware programável que funciona como um microcontrolador. Ele é capaz de processar informações recebidas por sensores e controlar diferentes componentes elétricos e eletrônicos, servindo como a "base" para a automação e programação de protótipos funcionais.</p>
+                    <a href="https://sketchfab.com/3d-models/arduino-compativel-uno-smd-4088843133774a798e714cd05000ec66" target="_blank" rel="noopener noreferrer" class="link-button">Ver modelo 3D ↗</a>
+                </div>
 
-                <article class="glossary-item">
+                <div class="glossary-card">
                     <h3>Tinkercad</h3>
-                    <p>Uma plataforma e simulador virtual on-line que permite aos usuários projetar, testar e demonstrar circuitos elétricos e programações sem a necessidade de componentes físicos. Utilizado para montagem digital do protótipo do semáforo acessível.</p>
-                    <a href="https://sketchfab.com/3d-models/arduino-compativel-uno-smd-4088843133774a798e714cd05000ec66" target="_blank" class="btn-link">Fonte / Modelo 3D</a>
-                </article>
+                    <p>Uma plataforma e simulador virtual on-line que permite aos usuários projetar, testar e demonstrar circuitos elétricos e programações sem a necessidade de componentes físicos. Utilizado para montagem digital do protótipo de um semáforo acessível.</p>
+                    <a href="https://sketchfab.com/3d-models/arduino-compativel-uno-smd-4088843133774a798e714cd05000ec66" target="_blank" rel="noopener noreferrer" class="link-button">Ver modelo 3D ↗</a>
+                </div>
             </div>
-        </section>
+        </article>
 
-        <section class="card project-section">
+        <article class="card project-card">
             <h2>Semáforo Acessível</h2>
+            <p>Confira a simulação interativa desenvolvida na plataforma Tinkercad:</p>
             
-            <a href="https://www.tinkercad.com/things/k1RXY1fsCcH-equipemorcegossemaforo-ifa?sharecode=z3eSTDTi9waGKwQko5TUvtq1cHlmj6ObYXnf-xIcuLw" target="_blank" class="btn-primary">Acesse a Simulação no Tinkercad 🚀</a>
+            <a href="https://www.tinkercad.com/things/k1RXY1fsCcH-equipemorcegossemaforo-ifa?sharecode=z3eSTDTi9waGKwQko5TUvtq1cHlmj6ObYXnf-xIcuLw" target="_blank" rel="noopener noreferrer" class="cta-button">
+                🚀 Acesse a simulação no Tinkercad
+            </a>
 
-            <p class="video-label">Para saber mais sobre o projeto, assista ao vídeo:</p>
-
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="Semáforo_Inclusivo_DepoisdoFeedback.mp4" type="video/mp4">
-                    Seu navegador não suporta a reprodução deste vídeo.
-                </video>
+            <div class="video-section">
+                <h3>Demonstração em Vídeo</h3>
+                <p>Para saber mais sobre o projeto, assista ao vídeo abaixo:</p>
+                
+                <div class="video-container">
+                    <video controls>
+                        <source src="Semáforo_Inclusivo_DepoisdoFeedback.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução deste vídeo.
+                    </video>
+                </div>
             </div>
-        </section>
+        </article>
     </main>
 
     <script src="script.js"></script>
